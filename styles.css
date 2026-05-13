@@ -1,0 +1,1352 @@
+:root {
+  --chrome: #272727;
+  --chrome-2: #313131;
+  --topbar: #41403f;
+  --line: #545353;
+  --muted-line: #757575;
+  --text: #ffffff;
+  --muted: #bebebe;
+  --soft: #7f7f7f;
+  --blue: #0b99ff;
+  --avatar: #43626b;
+  --component: #ce9afd;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: #ffffff;
+  color: var(--text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+button,
+a {
+  color: inherit;
+  font: inherit;
+}
+
+button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  cursor: default;
+  padding: 0;
+}
+
+[data-select-frame],
+[data-open-task],
+[data-open-person],
+[data-back-task],
+.person-link,
+.person-back {
+  cursor: pointer;
+}
+
+.figma-shell {
+  position: relative;
+  width: 100vw;
+  min-width: 1100px;
+  height: 100vh;
+  min-height: 729px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.topbar {
+  position: absolute;
+  z-index: 5;
+  inset: 0 0 auto 0;
+  height: 44px;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  background: var(--topbar);
+  border-bottom: 1px solid var(--line);
+}
+
+.tabs {
+  display: flex;
+  height: 43px;
+  align-items: center;
+}
+
+.home-icon,
+.briefcase-icon,
+.new-tab,
+.book-icon {
+  width: 47px;
+  height: 43px;
+  border-right: 1px solid var(--line);
+  position: relative;
+}
+
+.home-icon::before {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 11px;
+  left: 17px;
+  top: 16px;
+  border: 1.2px solid #d8d8d8;
+  border-top-color: transparent;
+  transform: rotate(45deg);
+}
+
+.briefcase-icon::before {
+  content: "";
+  position: absolute;
+  left: 16px;
+  top: 17px;
+  width: 14px;
+  height: 11px;
+  border: 1px solid #d8d8d8;
+  border-radius: 2px;
+}
+
+.briefcase-icon::after {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: 14px;
+  width: 6px;
+  height: 4px;
+  border: 1px solid #d8d8d8;
+  border-bottom: 0;
+  border-radius: 2px 2px 0 0;
+}
+
+.file-tab {
+  width: 103px;
+  height: 43px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #2c2c2c;
+  border-right: 1px solid var(--line);
+  font-size: 8.5px;
+  font-weight: 600;
+  letter-spacing: -0.16px;
+}
+
+.tiny-diamond {
+  width: 8px;
+  height: 8px;
+  border: 1px solid var(--blue);
+  transform: rotate(45deg);
+}
+
+.close-mark {
+  color: #d7d7d7;
+  font-size: 10px;
+  transform: translateY(-1px);
+}
+
+.new-tab {
+  border-right: 0;
+  display: grid;
+  place-items: center;
+  font-size: 21px;
+  line-height: 1;
+  color: #dcdcdc;
+}
+
+.book-icon {
+  border-left: 1px solid var(--line);
+  border-right: 0;
+}
+
+.book-icon::before {
+  content: "";
+  position: absolute;
+  left: 17px;
+  top: 15px;
+  width: 12px;
+  height: 12px;
+  border: 1px solid #d8d8d8;
+  border-radius: 2px;
+}
+
+.book-icon::after {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: 13px;
+  width: 6px;
+  height: 4px;
+  border: 1px solid #d8d8d8;
+  border-bottom: 0;
+}
+
+.left-sidebar,
+.right-sidebar {
+  position: absolute;
+  top: 44px;
+  bottom: 0;
+  z-index: 4;
+  width: 197px;
+  background: var(--chrome);
+  overflow: hidden;
+}
+
+.left-sidebar {
+  left: 0;
+}
+
+.right-sidebar {
+  right: 0;
+}
+
+.project-section {
+  height: 78px;
+  padding: 12px 8px;
+  border-bottom: 0.25px solid var(--muted-line);
+}
+
+.figma-row,
+.project-title > div,
+.mode-tabs,
+.group-header,
+.task-meta,
+.collab-header,
+.task-tabs {
+  display: flex;
+  align-items: center;
+}
+
+.figma-row {
+  justify-content: space-between;
+}
+
+.figma-logo {
+  display: grid;
+  grid-template-columns: repeat(2, 5.4px);
+  grid-template-rows: repeat(3, 5.4px);
+  gap: 0;
+}
+
+.figma-logo span {
+  display: block;
+  border-radius: 5px;
+}
+
+.figma-logo span:nth-child(1) { background: #f24e1e; }
+.figma-logo span:nth-child(2) { background: #ff7262; }
+.figma-logo span:nth-child(3) { background: #a259ff; }
+.figma-logo span:nth-child(4) { background: #1abcfe; border-radius: 50%; }
+.figma-logo span:nth-child(5) { background: #0acf83; grid-column: 1; }
+
+.chevron {
+  width: 0;
+  height: 0;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-top: 4px solid var(--muted);
+  display: inline-block;
+}
+
+.panel-toggle {
+  width: 11px;
+  height: 7px;
+  border: 0.5px solid #ffffff;
+  border-radius: 1px;
+  position: relative;
+}
+
+.panel-toggle::before {
+  content: "";
+  position: absolute;
+  inset: -0.5px auto -0.5px -0.5px;
+  width: 4px;
+  border: 0.5px solid #ffffff;
+  border-radius: 1px 0 0 1px;
+}
+
+.project-title {
+  margin-top: 12px;
+}
+
+.project-title > div {
+  gap: 3px;
+}
+
+.project-title strong {
+  font-size: 10px;
+  line-height: 1;
+  letter-spacing: -0.19px;
+}
+
+.project-title p {
+  margin: 4px 0 0;
+  color: var(--soft);
+  font-size: 8px;
+  letter-spacing: -0.15px;
+}
+
+.mode-tabs {
+  height: 34px;
+  padding: 8px;
+  gap: 8px;
+  border-bottom: 0.25px solid var(--muted-line);
+}
+
+.mode-tabs button {
+  padding: 4px;
+  border-radius: 4px;
+  color: var(--soft);
+  font-size: 8px;
+  line-height: 1;
+  letter-spacing: -0.15px;
+}
+
+.mode-tabs .selected {
+  background: #3b3b3b;
+  color: #ffffff;
+}
+
+.search-button {
+  margin-left: auto;
+  width: 12px;
+  height: 12px;
+  position: relative;
+}
+
+.search-button::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 1px;
+  width: 6px;
+  height: 6px;
+  border: 1px solid var(--soft);
+  border-radius: 50%;
+}
+
+.search-button::after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 1px;
+  background: var(--soft);
+  transform: rotate(45deg);
+  left: 7px;
+  top: 8px;
+}
+
+.sidebar-group {
+  padding: 8px;
+  border-bottom: 0.25px solid var(--muted-line);
+}
+
+.flows {
+  height: 138px;
+}
+
+.layers {
+  height: 216px;
+}
+
+.components {
+  height: 229px;
+}
+
+.group-header {
+  justify-content: space-between;
+  width: 181px;
+  margin-bottom: 4px;
+}
+
+.group-header h2 {
+  margin: 0;
+  padding: 4px;
+  font-size: 8px;
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: -0.15px;
+}
+
+.group-header button {
+  width: 12px;
+  height: 12px;
+  color: #ffffff;
+  font-size: 12px;
+  line-height: 12px;
+}
+
+.flow,
+.layer-list button,
+.component-list button {
+  width: 181px;
+  min-height: 20px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 8px;
+  line-height: 1;
+  font-weight: 300;
+  letter-spacing: -0.15px;
+  text-align: left;
+}
+
+.flow {
+  padding: 4px;
+}
+
+.flow.selected {
+  background: #3b3b3b;
+  font-weight: 500;
+}
+
+.layer-list,
+.component-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.layer-list button,
+.component-list button {
+  padding: 4px;
+  font-weight: 500;
+}
+
+.layer-list .selectable-frame {
+  padding-right: 7px;
+}
+
+.figma-shell[data-state="frame-selected"] .layer-list .selectable-frame,
+.figma-shell[data-state="task-selected"] .layer-list .selectable-frame,
+.figma-shell[data-state="person-selected"] .layer-list .selectable-frame {
+  background: #4a5879;
+}
+
+.layer-status {
+  display: none;
+  margin-left: auto;
+  color: #ffffff;
+  font-size: 7px;
+  line-height: 1;
+}
+
+.figma-shell[data-state="frame-selected"] .layer-status,
+.figma-shell[data-state="task-selected"] .layer-status,
+.figma-shell[data-state="person-selected"] .layer-status {
+  display: inline-block;
+}
+
+.component-list button {
+  color: var(--component);
+}
+
+.frame-icon {
+  width: 8px;
+  height: 8px;
+  border: 1px solid #ffffff;
+  display: inline-block;
+  position: relative;
+}
+
+.frame-icon::before,
+.frame-icon::after {
+  content: "";
+  position: absolute;
+  background: #ffffff;
+}
+
+.frame-icon::before {
+  left: 3px;
+  top: -2px;
+  width: 1px;
+  height: 12px;
+}
+
+.frame-icon::after {
+  left: -2px;
+  top: 3px;
+  width: 12px;
+  height: 1px;
+}
+
+.component-icon {
+  width: 6px;
+  height: 6px;
+  border: 1px solid #7b6a96;
+  transform: rotate(45deg);
+  margin-left: 1px;
+}
+
+.canvas {
+  position: absolute;
+  inset: 44px 197px 0 197px;
+  background: #ffffff;
+}
+
+.canvas-hotspot,
+.selected-frame {
+  position: absolute;
+  left: 92px;
+  top: 169px;
+  width: 585px;
+  height: 358px;
+}
+
+.canvas-hotspot {
+  z-index: 1;
+  background: transparent;
+}
+
+.selected-frame {
+  z-index: 2;
+  display: none;
+  border: 2.24px solid #418adf;
+  background: transparent;
+}
+
+.figma-shell[data-state="frame-selected"] .selected-frame,
+.figma-shell[data-state="task-selected"] .selected-frame,
+.figma-shell[data-state="person-selected"] .selected-frame {
+  display: block;
+}
+
+.selected-frame-label {
+  position: absolute;
+  left: -5px;
+  top: -19px;
+  color: #8abeed;
+  font-size: 13.6px;
+  line-height: 1;
+  letter-spacing: -0.26px;
+}
+
+.resize-handle {
+  position: absolute;
+  width: 13.4px;
+  height: 13.4px;
+  background: #ffffff;
+  border: 1.12px solid var(--blue);
+}
+
+.resize-handle.top-left {
+  left: -8px;
+  top: -8px;
+}
+
+.resize-handle.top-right {
+  right: -8px;
+  top: -8px;
+}
+
+.resize-handle.bottom-left {
+  left: -8px;
+  bottom: -8px;
+}
+
+.resize-handle.bottom-right {
+  right: -8px;
+  bottom: -8px;
+}
+
+.floating-toolbar {
+  position: absolute;
+  left: 50%;
+  bottom: 26px;
+  transform: translateX(-50%);
+  height: 52px;
+  min-width: 586px;
+  padding: 8px 9px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-radius: 11px;
+  background: var(--chrome);
+  box-shadow: 0 -2px 1px rgba(0, 0, 0, 0.25), inset 1px 1px 0 rgba(255, 255, 255, 0.29);
+}
+
+.tool {
+  width: 27px;
+  height: 27px;
+  display: grid;
+  place-items: center;
+  border-radius: 5px;
+  color: #e7e7e7;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.tool.selected,
+.selected-blue {
+  background: var(--blue);
+  color: #ffffff;
+}
+
+.text-tool {
+  font-size: 18px;
+  font-family: Georgia, serif;
+}
+
+.squiggle {
+  color: #a9a9a9;
+}
+
+.tool-divider {
+  height: 30px;
+  width: 1px;
+  background: #636363;
+  margin-left: -4px;
+  margin-right: -4px;
+}
+
+.collab-header {
+  height: 36px;
+  padding: 8px 10px 5px;
+  gap: 4px;
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--avatar);
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: -0.19px;
+}
+
+.avatar.small {
+  width: 18px;
+  height: 18px;
+  font-size: 10px;
+}
+
+.avatar.mini {
+  width: 13px;
+  height: 13px;
+  flex: 0 0 auto;
+  font-size: 8.5px;
+  font-weight: 400;
+}
+
+.avatar.purple {
+  background: #7227ce;
+}
+
+.right-actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.play-button {
+  width: 10px;
+  height: 10px;
+  border-left: 8px solid #dcdcdc;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+}
+
+.share-button {
+  padding: 7px 8px;
+  border-radius: 4px;
+  background: var(--blue);
+  color: #ffffff;
+  font-size: 8.5px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.16px;
+}
+
+.task-tabs {
+  height: 27px;
+  padding: 0 7px 7px;
+  border-bottom: 0.25px solid var(--muted-line);
+  gap: 3px;
+}
+
+.task-tabs button {
+  padding: 5px 8px;
+  border-radius: 4px;
+  color: var(--muted);
+  font-size: 8.5px;
+  line-height: 1;
+  letter-spacing: -0.16px;
+}
+
+.task-tabs .selected {
+  background: var(--chrome-2);
+  color: #ffffff;
+  padding: 4px 6px;
+}
+
+.task-tabs .progress {
+  margin-left: auto;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding-right: 0;
+}
+
+.task-panel {
+  position: relative;
+  padding: 9px 13px 0;
+}
+
+.task-panel h2 {
+  margin: 0 0 10px;
+  font-size: 8.5px;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: -0.16px;
+}
+
+.task-card {
+  position: relative;
+  width: 170px;
+  min-height: 78px;
+  margin-bottom: 37px;
+  padding: 12px;
+  border-radius: 5px;
+  background: var(--chrome-2);
+  overflow: hidden;
+}
+
+.task-meta {
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.person-link {
+  color: inherit;
+  text-align: left;
+}
+
+.task-meta .person-link,
+.task-meta span:not(.avatar),
+.task-meta em {
+  font-size: 7.5px;
+  line-height: 1;
+  letter-spacing: -0.14px;
+}
+
+.task-meta em {
+  color: var(--muted);
+  font-style: italic;
+}
+
+.task-meta > button:not(.person-link) {
+  margin-left: auto;
+  color: #ffffff;
+  font-size: 8px;
+  letter-spacing: 0;
+  transform: translateY(-3px);
+}
+
+.task-card h3 {
+  margin: 7px 0 5px;
+  font-size: 8.5px;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: -0.16px;
+}
+
+.task-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 8.5px;
+  line-height: 1.1;
+  letter-spacing: -0.16px;
+}
+
+.task-card a {
+  display: block;
+  margin-top: 7px;
+  color: #ffffff;
+  text-align: right;
+  text-decoration: none;
+  font-size: 7.5px;
+  line-height: 1;
+  letter-spacing: -0.14px;
+}
+
+.all-tasks-heading {
+  padding-top: 4px;
+  border-top: 0.25px solid var(--muted-line);
+  width: 197px;
+  margin-left: -11px !important;
+  padding-left: 11px;
+}
+
+.task-card.all-task {
+  margin-top: 10px;
+}
+
+.frame-detail-panel,
+.task-detail-panel,
+.person-detail-panel {
+  display: none;
+}
+
+.figma-shell[data-state="frame-selected"] .default-tabs,
+.figma-shell[data-state="frame-selected"] .default-task-panel,
+.figma-shell[data-state="task-selected"] .default-tabs,
+.figma-shell[data-state="task-selected"] .default-task-panel,
+.figma-shell[data-state="task-selected"] .frame-detail-panel,
+.figma-shell[data-state="person-selected"] .default-tabs,
+.figma-shell[data-state="person-selected"] .default-task-panel,
+.figma-shell[data-state="person-selected"] .frame-detail-panel,
+.figma-shell[data-state="person-selected"] .task-detail-panel {
+  display: none;
+}
+
+.figma-shell[data-state="frame-selected"] .frame-detail-panel {
+  display: block;
+}
+
+.figma-shell[data-state="task-selected"] .task-detail-panel {
+  display: block;
+}
+
+.figma-shell[data-state="person-selected"] .person-detail-panel {
+  display: block;
+}
+
+.frame-title-row {
+  position: relative;
+  height: 27px;
+  border-bottom: 0.25px solid var(--muted-line);
+}
+
+.frame-title-row h2 {
+  position: absolute;
+  left: 7px;
+  top: 2px;
+  margin: 0;
+  padding: 4px 6px;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 8.5px;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: -0.16px;
+}
+
+.frame-title-row .progress {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 8.5px;
+  line-height: 1;
+  letter-spacing: -0.16px;
+}
+
+.frame-detail-tabs {
+  height: 28px;
+  padding: 4px 12px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 3px;
+  border-bottom: 0.25px solid var(--muted-line);
+}
+
+.frame-detail-tabs button {
+  padding: 5px 8px;
+  border-radius: 4px;
+  color: var(--muted);
+  font-size: 8.5px;
+  line-height: 1;
+  letter-spacing: -0.16px;
+}
+
+.frame-detail-tabs .selected {
+  padding: 4px 6px;
+  background: var(--chrome-2);
+  color: #ffffff;
+}
+
+.frame-task-section {
+  position: relative;
+  padding: 13px 13px 0;
+}
+
+.frame-task-section h3 {
+  margin: 0 0 12px;
+  color: #ffffff;
+  font-size: 8.5px;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: -0.16px;
+}
+
+.create-task {
+  width: 168px;
+  margin: 0 0 10px 2px;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border: 1px solid #3c3c3c;
+  border-radius: 5px;
+  background: var(--chrome-2);
+  color: #ffffff;
+  font-size: 8.5px;
+  line-height: 1;
+  letter-spacing: -0.16px;
+}
+
+.create-task span {
+  font-size: 12px;
+  line-height: 8px;
+}
+
+.frame-task-card {
+  min-height: 84px;
+  margin-bottom: 10px;
+  padding: 8px 12px;
+}
+
+.frame-task-card .frame-context {
+  margin: 0 0 7px;
+  color: var(--muted);
+  font-size: 8.5px;
+  line-height: 1;
+  letter-spacing: -0.16px;
+}
+
+.frame-task-card h4 {
+  margin: 7px 0 0;
+  color: #ffffff;
+  font-size: 8.5px;
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: -0.16px;
+}
+
+.frame-task-card a {
+  margin-top: 7px;
+}
+
+.frame-task-section.completed {
+  margin-top: 25px;
+  border-top: 0.25px solid var(--muted-line);
+  padding-top: 8px;
+}
+
+.task-detail-panel {
+  position: relative;
+  min-height: calc(100vh - 80px);
+  font-size: 8.5px;
+  letter-spacing: -0.16px;
+}
+
+.task-detail-title-row {
+  position: relative;
+  height: 74px;
+  border-bottom: 0.3px solid var(--muted-line);
+}
+
+.task-detail-title-row h2 {
+  position: absolute;
+  left: 9px;
+  top: 11px;
+  margin: 0;
+  color: #ffffff;
+  font-size: 8.5px;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: -0.16px;
+}
+
+.task-detail-title-row .progress {
+  position: absolute;
+  right: 16px;
+  top: 11px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 8.5px;
+  line-height: 1;
+}
+
+.status-row {
+  position: absolute;
+  left: 50%;
+  top: 39px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+}
+
+.status-row span,
+.status-row button {
+  padding: 5px 6px;
+  border-radius: 5px;
+  font-size: 8.5px;
+  line-height: 1;
+}
+
+.status-row span {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.status-row button.selected {
+  padding: 6px 8px;
+  background: rgba(11, 153, 255, 0.1);
+  color: var(--blue);
+}
+
+.task-description {
+  padding: 12px 13px 16px;
+  border-bottom: 0.3px solid var(--muted-line);
+}
+
+.task-description h3,
+.assignees h3,
+.thread h3 {
+  margin: 0 0 5px;
+  color: var(--muted);
+  font-size: 8.5px;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: -0.16px;
+}
+
+.task-description p {
+  margin: 0;
+  width: 170px;
+  color: #ffffff;
+  font-size: 8.5px;
+  line-height: 1.12;
+}
+
+.assignees {
+  padding: 12px 13px 14px;
+  border-bottom: 0.3px solid var(--muted-line);
+}
+
+.assignee-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  color: #ffffff;
+  font-size: 8.5px;
+  line-height: 1;
+}
+
+.assignee-row em {
+  color: var(--muted);
+  font-style: italic;
+}
+
+.avatar.medium {
+  width: 18px;
+  height: 18px;
+  border: 1.2px solid var(--chrome);
+  font-size: 10px;
+}
+
+.add-member {
+  width: 170px;
+  margin-top: 10px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border: 1.2px solid #3c3c3c;
+  border-radius: 6px;
+  background: var(--chrome-2);
+  color: #ffffff;
+  font-size: 8.5px;
+  line-height: 1;
+}
+
+.thread {
+  padding: 13px 13px 0;
+}
+
+.message {
+  width: 170px;
+  margin-bottom: 10px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  background: var(--chrome-2);
+}
+
+.reply-message {
+  width: 170px;
+  margin-left: 0;
+  background: rgba(11, 153, 255, 0.1);
+}
+
+.message-meta {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+}
+
+.message-avatar {
+  width: 13px;
+  height: 13px;
+  flex: 0 0 auto;
+  font-size: 8.5px;
+  font-weight: 400;
+}
+
+.message-meta span:not(.avatar),
+.message-meta em {
+  font-size: 7.5px;
+  line-height: 1;
+  letter-spacing: -0.14px;
+}
+
+.message-meta em {
+  color: var(--muted);
+  font-style: normal;
+}
+
+.reply-message .message-meta em {
+  font-style: italic;
+}
+
+.message p {
+  margin: 8px 0 0;
+  color: #ffffff;
+  font-size: 8.5px;
+  line-height: 1.15;
+  letter-spacing: -0.16px;
+}
+
+.thread-event {
+  width: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  margin: 2px 0;
+}
+
+.thread-event span {
+  width: 10px;
+  height: 1px;
+  background: #555555;
+}
+
+.thread-event em {
+  padding: 5px 7px;
+  color: var(--muted);
+  background: var(--chrome);
+  border-radius: 5px;
+  font-size: 7.2px;
+  line-height: 1;
+  font-style: italic;
+  letter-spacing: -0.14px;
+  white-space: nowrap;
+}
+
+.reply-box {
+  width: 170px;
+  height: 29px;
+  margin-top: 9px;
+  padding: 5px 6px 6px 11px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.reply-box span {
+  color: #b2b2b2;
+  font-size: 8.2px;
+  line-height: 1;
+}
+
+.reply-box button {
+  width: 19px;
+  height: 19px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #d9d9d9;
+  color: #ffffff;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.assignee-row .person-link {
+  color: #ffffff;
+  font-size: 8.5px;
+  line-height: 1;
+}
+
+.message-meta .person-link {
+  color: #ffffff;
+  font-size: 7.5px;
+  line-height: 1;
+  letter-spacing: -0.14px;
+}
+
+.person-detail-panel {
+  position: relative;
+  min-height: calc(100vh - 80px);
+  letter-spacing: -0.16px;
+}
+
+.person-header-row {
+  position: relative;
+  height: 82px;
+  border-bottom: 0.3px solid var(--muted-line);
+}
+
+.person-back {
+  position: absolute;
+  left: 12px;
+  top: 24px;
+  color: #ffffff;
+  font-size: 10.5px;
+  line-height: 1;
+}
+
+.person-header-row .avatar {
+  position: absolute;
+  left: 26px;
+  top: 20px;
+}
+
+.person-header-row h2 {
+  position: absolute;
+  left: 54px;
+  top: 25px;
+  margin: 0;
+  color: #ffffff;
+  font-size: 8.5px;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: -0.16px;
+}
+
+.person-header-row .progress {
+  position: absolute;
+  right: 10px;
+  top: 24px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #ffffff;
+  font-size: 8.5px;
+  line-height: 1;
+}
+
+.person-tabs {
+  position: absolute;
+  left: 10px;
+  top: 52px;
+  display: flex;
+  align-items: center;
+}
+
+.person-tabs button {
+  padding: 5px 6px;
+  border-radius: 5px;
+  color: var(--muted);
+  font-size: 8.5px;
+  line-height: 1;
+  letter-spacing: -0.16px;
+}
+
+.person-tabs .selected {
+  background: var(--chrome-2);
+  color: #ffffff;
+}
+
+.person-task-list {
+  padding: 14px 13px 0;
+}
+
+.person-task-card {
+  position: relative;
+  width: 170px;
+  min-height: 94px;
+  margin-bottom: 14px;
+  padding: 12px;
+  border-radius: 6px;
+  background: var(--chrome-2);
+  overflow: hidden;
+}
+
+.person-task-card > button {
+  position: absolute;
+  right: 12px;
+  top: 9px;
+  color: #ffffff;
+  font-size: 8px;
+  line-height: 1;
+}
+
+.person-task-card h3 {
+  margin: 0 0 8px;
+  color: #ffffff;
+  font-size: 8.5px;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: -0.16px;
+}
+
+.person-task-card p {
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 8.5px;
+  line-height: 1.12;
+  letter-spacing: -0.16px;
+}
+
+.person-task-card div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.person-task-card span,
+.person-task-card a {
+  font-size: 7.5px;
+  line-height: 1;
+  letter-spacing: -0.14px;
+  text-decoration: none;
+}
+
+.person-task-card span {
+  color: var(--muted);
+}
+
+.person-task-card a {
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+@media (max-width: 1100px) {
+  .figma-shell {
+    min-width: 1000px;
+  }
+
+  .floating-toolbar {
+    min-width: 500px;
+    gap: 10px;
+  }
+}

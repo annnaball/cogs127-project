@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>COGS 127 Handoff Prototype</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="figma-shell" data-state="no-frame" aria-label="COGS 127 Handoff prototype">
+      <header class="topbar">
+        <div class="tabs">
+          <button class="home-icon" aria-label="Home"></button>
+          <button class="briefcase-icon" aria-label="Files"></button>
+          <button class="file-tab active">
+            <span class="tiny-diamond"></span>
+            <span>COGS 127</span>
+            <span class="close-mark">×</span>
+          </button>
+          <button class="new-tab" aria-label="New tab">+</button>
+        </div>
+        <div class="topbar-right">
+          <button class="book-icon" aria-label="Resources"></button>
+        </div>
+      </header>
+
+      <aside class="left-sidebar">
+        <section class="project-section">
+          <div class="figma-row">
+            <div class="figma-logo" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <span class="chevron"></span>
+            <span class="panel-toggle"></span>
+          </div>
+          <div class="project-title">
+            <div>
+              <strong>Cogs 127</strong>
+              <span class="chevron"></span>
+            </div>
+            <p>Drafts</p>
+          </div>
+        </section>
+
+        <nav class="mode-tabs" aria-label="Figma mode tabs">
+          <button>File</button>
+          <button>Assests</button>
+          <button class="selected">Handoff</button>
+          <button class="search-button" aria-label="Search"></button>
+        </nav>
+
+        <section class="sidebar-group flows">
+          <div class="group-header">
+            <h2>Flows</h2>
+            <button aria-label="Add flow">+</button>
+          </div>
+          <button class="flow selected">Flow 1</button>
+          <button class="flow">Flow 2</button>
+          <button class="flow">Flow 3</button>
+          <button class="flow">Flow 4</button>
+        </section>
+
+        <section class="sidebar-group layers">
+          <div class="group-header">
+            <h2>Layers</h2>
+          </div>
+          <div class="layer-list">
+            <button class="selectable-frame" data-select-frame="frame-1"><span class="frame-icon"></span><span>Frame 1</span><span class="layer-status">⌘</span></button>
+            <button><span class="frame-icon"></span>Frame 2</button>
+            <button><span class="frame-icon"></span>Frame 3</button>
+            <button><span class="frame-icon"></span>Frame 4</button>
+            <button><span class="frame-icon"></span>Frame 5</button>
+            <button><span class="frame-icon"></span>Frame 6</button>
+            <button><span class="frame-icon"></span>Frame 7</button>
+          </div>
+        </section>
+
+        <section class="sidebar-group components">
+          <div class="group-header">
+            <h2>Components</h2>
+          </div>
+          <div class="component-list">
+            <button><span class="component-icon"></span>Component 1</button>
+            <button><span class="component-icon"></span>Component 2</button>
+            <button><span class="component-icon"></span>Component 3</button>
+            <button><span class="component-icon"></span>Component 4</button>
+            <button><span class="component-icon"></span>Component 5</button>
+          </div>
+        </section>
+      </aside>
+
+      <section class="canvas" aria-label="Canvas">
+        <button class="canvas-hotspot" data-select-frame="frame-1" aria-label="Select Frame 1"></button>
+        <button class="selected-frame" data-select-frame="frame-1" aria-label="Selected Frame 1">
+          <span class="selected-frame-label">Frame 1</span>
+          <span class="resize-handle top-left"></span>
+          <span class="resize-handle top-right"></span>
+          <span class="resize-handle bottom-left"></span>
+          <span class="resize-handle bottom-right"></span>
+        </button>
+        <div class="floating-toolbar" aria-label="Figma tools">
+          <button class="tool selected" aria-label="Move">⌁</button>
+          <button class="tool" aria-label="Frame">#</button>
+          <button class="tool" aria-label="Shape">□</button>
+          <button class="tool" aria-label="Pen">⌁</button>
+          <button class="tool text-tool" aria-label="Text">T</button>
+          <button class="tool" aria-label="Comment">○</button>
+          <button class="tool" aria-label="Resources">♧</button>
+          <span class="tool-divider"></span>
+          <button class="tool squiggle" aria-label="Draw">〰</button>
+          <button class="tool" aria-label="Code">&lt;/&gt;</button>
+          <button class="tool handoff-tool selected-blue" aria-label="Handoff">⌘</button>
+        </div>
+      </section>
+
+      <aside class="right-sidebar">
+        <section class="collab-header">
+          <div class="avatar small">A</div>
+          <span class="chevron"></span>
+          <div class="right-actions">
+            <button class="play-button" aria-label="Present"></button>
+            <span class="chevron"></span>
+            <button class="share-button">Share</button>
+          </div>
+        </section>
+
+        <nav class="task-tabs default-tabs" aria-label="Task tabs">
+          <button class="selected">Active Tasks</button>
+          <button>People</button>
+          <button class="progress">60% <span class="chevron"></span></button>
+        </nav>
+
+        <section class="task-panel default-task-panel">
+          <h2>Your Tasks</h2>
+          <article class="task-card">
+            <div class="task-meta">
+              <span class="avatar mini">A</span>
+              <button class="person-link" data-open-person>Annabelle Zhou</button>
+              <em>1 day ago</em>
+              <button aria-label="More task options">•••</button>
+            </div>
+            <h3>Frame 10</h3>
+            <p>This is the name of the task. In this card format it looks more like a description though</p>
+            <a href="#" data-open-task>Open Task →</a>
+          </article>
+
+          <article class="task-card">
+            <div class="task-meta">
+              <span class="avatar mini">A</span>
+              <button class="person-link" data-open-person>Annabelle Zhou</button>
+              <em>1 day ago</em>
+              <button aria-label="More task options">•••</button>
+            </div>
+            <h3>Frame 10</h3>
+            <p>This is the name of the task. In this card format it looks more like a description though</p>
+            <a href="#" data-open-task>Open Task →</a>
+          </article>
+
+          <h2 class="all-tasks-heading">All Tasks</h2>
+          <article class="task-card all-task">
+            <div class="task-meta">
+              <span class="avatar mini purple">K</span>
+              <button class="person-link" data-open-person>Kanon</button>
+              <em>1 day ago</em>
+              <button aria-label="More task options">•••</button>
+            </div>
+            <h3>Frame 190</h3>
+            <p>This is the name of the task. In this card format it looks more like a description though</p>
+            <a href="#" data-open-task>Open Task →</a>
+          </article>
+        </section>
+
+        <section class="frame-detail-panel" aria-label="Selected frame details">
+          <div class="frame-title-row">
+            <h2>Frame 100</h2>
+            <span class="progress">60% <span class="chevron"></span></span>
+          </div>
+
+          <nav class="frame-detail-tabs" aria-label="Frame detail tabs">
+            <button class="selected">Tasks</button>
+            <button>Versions</button>
+          </nav>
+
+          <section class="frame-task-section in-progress">
+            <h3>In-progress</h3>
+            <button class="create-task"><span>+</span>Create Task</button>
+
+            <article class="task-card frame-task-card">
+              <p class="frame-context">Frame 10</p>
+              <div class="task-meta">
+                <span class="avatar mini">A</span>
+                <button class="person-link" data-open-person>Annabelle Zhou</button>
+                <em>1 day ago</em>
+                <button aria-label="More task options">•••</button>
+              </div>
+              <h4>This is the title of the task here. Probably be two lines max</h4>
+              <a href="#" data-open-task>Open Task →</a>
+            </article>
+
+            <article class="task-card frame-task-card">
+              <p class="frame-context">Frame 10</p>
+              <div class="task-meta">
+                <span class="avatar mini">A</span>
+                <button class="person-link" data-open-person>Annabelle Zhou</button>
+                <em>2 days ago</em>
+                <button aria-label="More task options">•••</button>
+              </div>
+              <h4>This is the title of the task here. Probably be two lines max</h4>
+              <a href="#" data-open-task>Open Task →</a>
+            </article>
+          </section>
+
+          <section class="frame-task-section completed">
+            <h3>Completed</h3>
+            <article class="task-card frame-task-card">
+              <p class="frame-context">Frame 10</p>
+              <div class="task-meta">
+                <span class="avatar mini">A</span>
+                <button class="person-link" data-open-person>Annabelle Zhou</button>
+                <em>1 day ago</em>
+                <button aria-label="More task options">•••</button>
+              </div>
+              <h4>This is the title of the task here. Probably be two lines max</h4>
+              <a href="#" data-open-task>Open Task →</a>
+            </article>
+          </section>
+        </section>
+
+        <section class="task-detail-panel" aria-label="Selected task details">
+          <div class="task-detail-title-row">
+            <h2>Title of Task</h2>
+            <span class="progress">60% <span class="chevron"></span></span>
+          </div>
+
+          <div class="status-row">
+            <span>Status</span>
+            <button class="selected">In-Progress</button>
+            <button>Completed</button>
+          </div>
+
+          <section class="task-description">
+            <h3>Description</h3>
+            <p>Spacing and typography check the component variants for hover states.</p>
+          </section>
+
+          <section class="assignees">
+            <h3>Assignees</h3>
+            <div class="assignee-row">
+              <span class="avatar medium">A</span>
+              <button class="person-link" data-open-person>Annabelle Zhou</button>
+              <em>(Creator)</em>
+            </div>
+            <div class="assignee-row">
+              <span class="avatar medium purple">K</span>
+              <button class="person-link" data-open-person>Kanon Kitazume</button>
+            </div>
+            <button class="add-member"><span>+</span>Add team member</button>
+          </section>
+
+          <section class="thread">
+            <h3>Thread</h3>
+            <article class="message">
+              <div class="message-meta">
+                <span class="avatar message-avatar">A</span>
+                <button class="person-link" data-open-person>Annabelle Zhou</button>
+                <em>1 day ago</em>
+              </div>
+              <p>Check the hover states on the card component</p>
+            </article>
+            <article class="message reply-message">
+              <div class="message-meta">
+                <span class="avatar message-avatar purple">K</span>
+                <button class="person-link" data-open-person>Kanon Kitazume</button>
+                <em>20 minutes ago</em>
+              </div>
+              <p>starting on the hover states now</p>
+            </article>
+            <div class="thread-event"><span></span><em>Updated by Kanon • 10 minutes ago</em><span></span></div>
+            <div class="thread-event"><span></span><em>Status → Completed 10 minutes ago</em><span></span></div>
+            <div class="thread-event"><span></span><em>Status → In-Progress 2 minutes ago</em><span></span></div>
+            <article class="message">
+              <div class="message-meta">
+                <span class="avatar message-avatar">A</span>
+                <button class="person-link" data-open-person>Annabelle Zhou</button>
+                <em>2 minutes ago</em>
+              </div>
+              <p>Check the hover states on the card component</p>
+            </article>
+            <label class="reply-box">
+              <span>Reply</span>
+              <button aria-label="Send reply">↑</button>
+            </label>
+          </section>
+        </section>
+
+        <section class="person-detail-panel" aria-label="Selected person tasks">
+          <div class="person-header-row">
+            <button class="person-back" data-back-task aria-label="Back to task">←</button>
+            <span class="avatar medium">A</span>
+            <h2>Annabelle</h2>
+            <span class="progress">60% <span class="chevron"></span></span>
+          </div>
+
+          <nav class="person-tabs" aria-label="Person task status">
+            <button class="selected">In-Progress</button>
+            <button>Completed</button>
+            <button>Created</button>
+          </nav>
+
+          <section class="person-task-list">
+            <article class="person-task-card">
+              <button aria-label="More task options">•••</button>
+              <h3>Frame 10</h3>
+              <p>This is the name of the task. In this card format it looks more like a description though</p>
+              <div>
+                <span>Updated 2 minutes ago</span>
+                <a href="#" data-open-task>Open Task →</a>
+              </div>
+            </article>
+
+            <article class="person-task-card">
+              <button aria-label="More task options">•••</button>
+              <h3>Frame 10</h3>
+              <p>This is the name of the task. In this card format it looks more like a description though</p>
+              <div>
+                <span>Updated 2 minutes ago</span>
+                <a href="#" data-open-task>Open Task →</a>
+              </div>
+            </article>
+
+            <article class="person-task-card">
+              <button aria-label="More task options">•••</button>
+              <h3>Frame 10</h3>
+              <p>This is the name of the task. In this card format it looks more like a description though</p>
+              <div>
+                <span>Updated 2 minutes ago</span>
+                <a href="#" data-open-task>Open Task →</a>
+              </div>
+            </article>
+          </section>
+        </section>
+      </aside>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>
