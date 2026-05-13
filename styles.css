@@ -489,6 +489,37 @@ button {
   background: #ffffff;
 }
 
+.default-frame-preview {
+  position: absolute;
+  left: 92px;
+  top: 150px;
+  width: 585px;
+  height: 377px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.default-frame-preview span {
+  display: block;
+  margin-bottom: 8px;
+  color: #b9b9b9;
+  font-size: 13.6px;
+  line-height: 1;
+  letter-spacing: -0.26px;
+}
+
+.default-frame-preview div {
+  width: 100%;
+  height: 358px;
+  background: #d0d0d0;
+}
+
+.figma-shell[data-state="frame-selected"] .default-frame-preview,
+.figma-shell[data-state="task-selected"] .default-frame-preview,
+.figma-shell[data-state="person-selected"] .default-frame-preview {
+  display: none;
+}
+
 .canvas-hotspot,
 .selected-frame {
   position: absolute;
@@ -507,7 +538,7 @@ button {
   z-index: 2;
   display: none;
   border: 2.24px solid #418adf;
-  background: transparent;
+  background: #d0d0d0;
 }
 
 .figma-shell[data-state="frame-selected"] .selected-frame,
