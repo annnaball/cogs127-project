@@ -4,6 +4,7 @@ const selectableFrames = document.querySelectorAll("[data-select-frame]");
 const taskLinks = document.querySelectorAll("[data-open-task]");
 const personLinks = document.querySelectorAll("[data-open-person]");
 const backTaskButtons = document.querySelectorAll("[data-back-task]");
+const backPreviousButtons = document.querySelectorAll("[data-back-previous]");
 
 function selectFrame(event) {
   event.stopPropagation();
@@ -13,6 +14,9 @@ function selectFrame(event) {
 function openTask(event) {
   event.preventDefault();
   event.stopPropagation();
+  if (shell.dataset.state !== "task-selected") {
+    shell.dataset.previousState = shell.dataset.state || "frame-selected";
+  }
   shell.dataset.state = "task-selected";
 }
 
@@ -26,6 +30,12 @@ function backToTask(event) {
   event.preventDefault();
   event.stopPropagation();
   shell.dataset.state = "task-selected";
+}
+
+function backToPrevious(event) {
+  event.preventDefault();
+  event.stopPropagation();
+  shell.dataset.state = shell.dataset.previousState || "frame-selected";
 }
 
 function clearFrameSelection(event) {
@@ -53,6 +63,10 @@ personLinks.forEach((target) => {
 
 backTaskButtons.forEach((target) => {
   target.addEventListener("click", backToTask);
+});
+
+backPreviousButtons.forEach((target) => {
+  target.addEventListener("click", backToPrevious);
 });
 
 canvas.addEventListener("click", clearFrameSelection);

@@ -136,40 +136,40 @@
 
         <section class="task-panel default-task-panel">
           <h2>Your Tasks</h2>
-          <article class="task-card">
+          <article class="task-card frame-task-card">
+            <p class="frame-context">Frame 10</p>
             <div class="task-meta">
               <span class="avatar mini">A</span>
               <button class="person-link" data-open-person>Annabelle Zhou</button>
               <em>1 day ago</em>
               <button aria-label="More task options">•••</button>
             </div>
-            <h3>Frame 10</h3>
-            <p>This is the name of the task. In this card format it looks more like a description though</p>
+            <h4>This is the title of the task here. Probably be two lines max</h4>
             <a href="#" data-open-task>Open Task →</a>
           </article>
 
-          <article class="task-card">
+          <article class="task-card frame-task-card">
+            <p class="frame-context">Frame 10</p>
             <div class="task-meta">
               <span class="avatar mini">A</span>
               <button class="person-link" data-open-person>Annabelle Zhou</button>
               <em>1 day ago</em>
               <button aria-label="More task options">•••</button>
             </div>
-            <h3>Frame 10</h3>
-            <p>This is the name of the task. In this card format it looks more like a description though</p>
+            <h4>This is the title of the task here. Probably be two lines max</h4>
             <a href="#" data-open-task>Open Task →</a>
           </article>
 
           <h2 class="all-tasks-heading">All Tasks</h2>
-          <article class="task-card all-task">
+          <article class="task-card frame-task-card all-task">
+            <p class="frame-context">Frame 190</p>
             <div class="task-meta">
               <span class="avatar mini purple">K</span>
               <button class="person-link" data-open-person>Kanon</button>
               <em>1 day ago</em>
               <button aria-label="More task options">•••</button>
             </div>
-            <h3>Frame 190</h3>
-            <p>This is the name of the task. In this card format it looks more like a description though</p>
+            <h4>This is the title of the task here. Probably be two lines max</h4>
             <a href="#" data-open-task>Open Task →</a>
           </article>
         </section>
@@ -232,6 +232,7 @@
 
         <section class="task-detail-panel" aria-label="Selected task details">
           <div class="task-detail-title-row">
+            <button class="task-back" data-back-previous aria-label="Back to previous page">←</button>
             <h2>Title of Task</h2>
             <span class="progress">60% <span class="chevron"></span></span>
           </div>
@@ -312,34 +313,40 @@
           </nav>
 
           <section class="person-task-list">
-            <article class="person-task-card">
-              <button aria-label="More task options">•••</button>
+            <article class="task-card person-task-card">
+              <div class="task-meta">
+                <span class="avatar mini purple">K</span>
+                <button class="person-link" data-open-person>Kanon Kitazume</button>
+                <em>2 minutes ago</em>
+                <button aria-label="More task options">•••</button>
+              </div>
               <h3>Frame 10</h3>
               <p>This is the name of the task. In this card format it looks more like a description though</p>
-              <div>
-                <span>Updated 2 minutes ago</span>
-                <a href="#" data-open-task>Open Task →</a>
-              </div>
+              <a href="#" data-open-task>Open Task →</a>
             </article>
 
-            <article class="person-task-card">
-              <button aria-label="More task options">•••</button>
+            <article class="task-card person-task-card">
+              <div class="task-meta">
+                <span class="avatar mini">A</span>
+                <button class="person-link" data-open-person>Annabelle Zhou</button>
+                <em>2 minutes ago</em>
+                <button aria-label="More task options">•••</button>
+              </div>
               <h3>Frame 10</h3>
               <p>This is the name of the task. In this card format it looks more like a description though</p>
-              <div>
-                <span>Updated 2 minutes ago</span>
-                <a href="#" data-open-task>Open Task →</a>
-              </div>
+              <a href="#" data-open-task>Open Task →</a>
             </article>
 
-            <article class="person-task-card">
-              <button aria-label="More task options">•••</button>
+            <article class="task-card person-task-card">
+              <div class="task-meta">
+                <span class="avatar mini">A</span>
+                <button class="person-link" data-open-person>Annabelle Zhou</button>
+                <em>2 minutes ago</em>
+                <button aria-label="More task options">•••</button>
+              </div>
               <h3>Frame 10</h3>
               <p>This is the name of the task. In this card format it looks more like a description though</p>
-              <div>
-                <span>Updated 2 minutes ago</span>
-                <a href="#" data-open-task>Open Task →</a>
-              </div>
+              <a href="#" data-open-task>Open Task →</a>
             </article>
           </section>
         </section>

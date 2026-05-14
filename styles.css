@@ -43,8 +43,10 @@ button {
 [data-open-task],
 [data-open-person],
 [data-back-task],
+[data-back-previous],
 .person-link,
-.person-back {
+.person-back,
+.task-back {
   cursor: pointer;
 }
 
@@ -990,7 +992,7 @@ button {
 
 .task-detail-title-row h2 {
   position: absolute;
-  left: 9px;
+  left: 25px;
   top: 11px;
   margin: 0;
   color: #ffffff;
@@ -998,6 +1000,15 @@ button {
   line-height: 1;
   font-weight: 600;
   letter-spacing: -0.16px;
+}
+
+.task-back {
+  position: absolute;
+  left: 10px;
+  top: 9px;
+  color: #ffffff;
+  font-size: 10.5px;
+  line-height: 1;
 }
 
 .task-detail-title-row .progress {
@@ -1311,64 +1322,8 @@ button {
 }
 
 .person-task-card {
-  position: relative;
-  width: 170px;
-  min-height: 94px;
   margin-bottom: 14px;
-  padding: 12px;
-  border-radius: 6px;
-  background: var(--chrome-2);
-  overflow: hidden;
-}
-
-.person-task-card > button {
-  position: absolute;
-  right: 12px;
-  top: 9px;
-  color: #ffffff;
-  font-size: 8px;
-  line-height: 1;
-}
-
-.person-task-card h3 {
-  margin: 0 0 8px;
-  color: #ffffff;
-  font-size: 8.5px;
-  line-height: 1;
-  font-weight: 600;
-  letter-spacing: -0.16px;
-}
-
-.person-task-card p {
-  margin: 0 0 8px;
-  color: var(--muted);
-  font-size: 8.5px;
-  line-height: 1.12;
-  letter-spacing: -0.16px;
-}
-
-.person-task-card div {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-}
-
-.person-task-card span,
-.person-task-card a {
-  font-size: 7.5px;
-  line-height: 1;
-  letter-spacing: -0.14px;
-  text-decoration: none;
-}
-
-.person-task-card span {
-  color: var(--muted);
-}
-
-.person-task-card a {
-  color: #ffffff;
-  white-space: nowrap;
+  min-height: 100px;
 }
 
 @media (max-width: 1100px) {
